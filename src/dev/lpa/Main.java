@@ -1,15 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+package dev.lpa;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.function.UnaryOperator;
+
+public class Main {
+    private static Random random = new Random();
+
+    public static void main(String[] args) {
+
+
+    }
+
+    private static void applyChanges(String[] names, List<UnaryOperator<String>> stringFunctions){
+        List<String> backedByArray = Arrays.asList(names);
+
+        for(var function : stringFunctions){
+            backedByArray.replaceAll(s->s.transform(function));
+            System.out.println(Arrays.toString(names));
+
         }
     }
+
 }
