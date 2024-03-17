@@ -1,5 +1,6 @@
 package dev.lpa;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -10,6 +11,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+        String[] names = {"Anna", "Bob", "Cameron", "Donald", "Eva", "Francis"};
+
+        List<UnaryOperator<String>> list = new ArrayList<>(List.of(
+
+                String::toUpperCase
+
+        ));
+
+        applyChanges(names, list);
 
     }
 
