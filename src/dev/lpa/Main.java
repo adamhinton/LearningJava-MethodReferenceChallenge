@@ -16,7 +16,9 @@ public class Main {
 
         List<UnaryOperator<String>> list = new ArrayList<>(List.of(
 
-                String::toUpperCase
+                String::toUpperCase,
+                s -> s += " " + getRandomChar('A', 'Z') + "."
+
 
         ));
 
@@ -32,6 +34,11 @@ public class Main {
             System.out.println(Arrays.toString(names));
 
         }
+    }
+
+    private static char getRandomChar(char startChar, char endChar){
+        return (char) random.nextInt((int) startChar, (int) endChar +1);
+
     }
 
 }
